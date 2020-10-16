@@ -17,7 +17,8 @@ namespace FifaVilagranglista
             Csapatok = Csapat.Beolvasas();
 
             OsszesCsapat();
-           
+
+            Console.ReadKey();
 
         }
 

@@ -19,10 +19,10 @@ namespace FifaVilagranglista
        public static List<Csapat> Beolvasas()
         {
 
-            var sr = new StreamReader("../../fifa.txt", Encoding.UTF8);
+            var sr = new StreamReader(@"..\..\fifa.txt", Encoding.UTF8);
             var outputList = new List<Csapat>();
             string[] tempTomb;
-
+            sr.ReadLine();
             while (!sr.EndOfStream)
             {
                 tempTomb = sr.ReadLine().Split(';');
