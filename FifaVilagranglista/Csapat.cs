@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace FifaVilagranglista
 {
-    class Jatekos
+    class Csapat
     {
 
-        public string Csapat { get; set; }
+        public string Nev { get; set; }
         public int Helyezes { get; set; }
         public int Valtozas { get; set; }
         public int Pontszam { get; set; }
 
 
-        static List<Jatekos> Beolvasas()
+       public static List<Csapat> Beolvasas()
         {
 
             var sr = new StreamReader("../../fifa.txt", Encoding.UTF8);
-            var outputList = new List<Jatekos>();
+            var outputList = new List<Csapat>();
             string[] tempTomb;
 
             while (!sr.EndOfStream)
             {
                 tempTomb = sr.ReadLine().Split(';');
-                outputList.Add(new Jatekos() { Csapat = tempTomb[0], Helyezes=int.Parse(tempTomb[1]), Valtozas= int.Parse(tempTomb[2]), Pontszam= int.Parse(tempTomb[3]) });
+                outputList.Add(new Csapat() { Nev = tempTomb[0], Helyezes=int.Parse(tempTomb[1]), Valtozas= int.Parse(tempTomb[2]), Pontszam= int.Parse(tempTomb[3]) });
 
             }
 
