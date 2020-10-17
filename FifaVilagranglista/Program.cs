@@ -18,10 +18,35 @@ namespace FifaVilagranglista
 
             OsszesCsapat();
             CsapatokPontszamanakAtlaga();
+            LegtobbetJavitoCsapat();
 
 
 
             Console.ReadKey();
+
+        }
+
+        private static void LegtobbetJavitoCsapat()
+        {
+
+            Console.WriteLine("5. feladat : A legtobbet javito csapat:");
+
+            Csapat legtobbetJavito = Csapatok[0];
+            for (int i = 1; i < Csapatok.Count; i++)
+            {
+
+                if (Csapatok[i].Valtozas > legtobbetJavito.Valtozas )
+                {
+                    legtobbetJavito = Csapatok[i];
+                }
+
+            }
+
+            //LINQ megoldas
+            //legtobbetJavito = Csapatok.Find(y=>y.Valtozas == Csapatok.Max(x => x.Valtozas));
+
+            Console.WriteLine($"\tHelyezes: {legtobbetJavito.Helyezes}\n\tCsapat : {legtobbetJavito.Nev}\n\tPontszam : {legtobbetJavito.Pontszam}");
+
 
         }
 
