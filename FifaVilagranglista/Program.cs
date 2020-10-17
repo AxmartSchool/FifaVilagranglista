@@ -19,10 +19,34 @@ namespace FifaVilagranglista
             OsszesCsapat();
             CsapatokPontszamanakAtlaga();
             LegtobbetJavitoCsapat();
+            VanEMagyarorszag();
 
 
 
             Console.ReadKey();
+
+        }
+
+        private static void VanEMagyarorszag()
+        {
+
+            bool vanMagyarorszag = false;
+            int szamlalo = 0;
+            while (!vanMagyarorszag && szamlalo < Csapatok.Count)
+            {
+                if (Csapatok[szamlalo].Nev.Contains("Magyarország"))
+                {
+                    vanMagyarorszag = true;
+                }
+
+                szamlalo++;
+
+            }
+
+            //LINQ megoldas
+            //vanMagyarorszag = Csapatok.FindAll(x => x.Nev.Contains("Magyarország")).Count > 0;
+            Console.WriteLine($"6. feladat : A csapatok kozott {(vanMagyarorszag?"van":"nincs")} Magyarorszag.");
+
 
         }
 
