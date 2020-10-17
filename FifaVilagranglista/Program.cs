@@ -17,8 +17,27 @@ namespace FifaVilagranglista
             Csapatok = Csapat.Beolvasas();
 
             OsszesCsapat();
+            CsapatokPontszamanakAtlaga();
+
+
 
             Console.ReadKey();
+
+        }
+
+        private static void CsapatokPontszamanakAtlaga()
+        {
+
+            float osszesPontszam = 0;
+
+            foreach (var cs in Csapatok)
+            {
+                osszesPontszam += cs.Pontszam;
+            }
+
+            Console.WriteLine($"4. feladat : A csapatok atlagos pontszama: {osszesPontszam/Csapatok.Count,0:N2}");
+            //LINQ megoldas
+            //Console.WriteLine($"4. feladat : A csapatok atlagos pontszama: {Csapatok.Sum(x=> x.Pontszam)/(float)Csapatok.Count,0:N2}");
 
         }
 
