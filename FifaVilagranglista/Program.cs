@@ -20,10 +20,47 @@ namespace FifaVilagranglista
             CsapatokPontszamanakAtlaga();
             LegtobbetJavitoCsapat();
             VanEMagyarorszag();
+            Valtozasok();
 
 
 
             Console.ReadKey();
+
+        }
+
+        private static void Valtozasok()
+        {
+
+            Dictionary<int, int> valtozas = new Dictionary<int, int>();
+
+            foreach (var cs in Csapatok)
+            {
+                if (valtozas.ContainsKey(cs.Valtozas))
+                {
+                    valtozas[cs.Valtozas]++;
+                }
+                else
+                {
+                    valtozas.Add(cs.Valtozas, 1);
+                }
+
+            }
+
+            
+
+
+            Console.WriteLine($"7. feladat : Statisztika");
+            foreach (var v in valtozas)
+            {
+
+                if (v.Value > 1)
+                {
+                    Console.WriteLine($"\t{v.Key} valtozott : {v.Value} csapat");
+                }
+
+            }
+
+
 
         }
 
