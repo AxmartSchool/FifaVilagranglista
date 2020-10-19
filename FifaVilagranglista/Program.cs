@@ -46,10 +46,14 @@ namespace FifaVilagranglista
 
             }
 
-            
 
 
             Console.WriteLine($"7. feladat : Statisztika");
+
+            //LINQ megoldas
+            //Csapatok.GroupBy(x => x.Valtozas, (valtozasMerteke, csapatokSzama) => new { Valtozas = valtozasMerteke, csapatok = csapatokSzama.Count() }).Where(y => y.csapatok > 1).ToList().ForEach(x => Console.WriteLine($"\t{x.Valtozas} valtozott : {x.csapatok} csapat"));
+
+
             foreach (var v in valtozas)
             {
 
